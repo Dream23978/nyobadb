@@ -29,10 +29,9 @@ class logix extends Controller
         'password.required' => 'Password gak boleh kosong',
     ]);
 
-
+    //**Ini logika kalau berhasil login, langsung ngarah ke halamannya */
     if (Auth::attempt($data)) {
         $request->session()->regenerate();
-
 
         return redirect()->intended('/Caridata');
     }
